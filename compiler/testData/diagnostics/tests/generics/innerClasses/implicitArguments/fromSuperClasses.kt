@@ -4,17 +4,17 @@ open class Outer<X, Y> {
 }
 
 class Derived : Outer<String, Int>() {
-    fun foo(): Inner<Char> = null!!
+    fun foo(): <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Inner<!><Char> = null!!
 }
 
 
 class A : Outer<Double, Short>() {
     class B : Outer<Float, Long>() {
-        fun bar(): Inner<String> = null!!
+        fun bar(): <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Inner<!><String> = null!!
     }
 }
 
 fun foo() {
-    Derived().foo() checkType { _<Outer<String, Int>.Inner<Char>>() }
-    A.B().bar() checkType { _<Outer<Float, Long>.Inner<String>>() }
+    Derived().foo() <!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>checkType<!> { <!UNRESOLVED_REFERENCE!>_<!><Outer<String, Int>.Inner<Char>>() }
+    A.B().bar() <!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>checkType<!> { <!UNRESOLVED_REFERENCE!>_<!><Outer<Float, Long>.Inner<String>>() }
 }

@@ -13,7 +13,7 @@ class Outer<T> {
             }
 
             class Derived : LocalOuter<Double, Short>() {
-                fun foo(): LocalInner<Long> = null!!
+                fun foo(): <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>LocalInner<!><Long> = null!!
             }
 
             Derived()
@@ -27,7 +27,7 @@ class Outer<T> {
             }
 
             class Derived2 : LocalOuter2<Double, Short>() {
-                fun foo(): LocalInner2<Long> = null!!
+                fun foo(): <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>LocalInner2<!><Long> = null!!
             }
             Derived2()
         }
@@ -36,7 +36,7 @@ class Outer<T> {
             var x = foobar<String>()
             x = foobar<String>()
 
-            x().foo().a() checkType { _<A<T, F, String, Double, Short, Long>>() }
+            x().foo().<!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>a<!>() <!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>checkType<!> { <!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>_<!><A<T, F, String, Double, Short, Long>>() }
 
             x = <!TYPE_MISMATCH!>foobar<Int>()<!>
             x = <!TYPE_MISMATCH!>z.foobar<String>()<!>
@@ -44,7 +44,7 @@ class Outer<T> {
             var y = noParameters()
             y = noParameters()
 
-            y().foo().a() checkType { _<A<T, F, Any, Double, Short, Long>>() }
+            y().foo().<!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>a<!>() <!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>checkType<!> { <!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>_<!><A<T, F, Any, Double, Short, Long>>() }
         }
     }
 }

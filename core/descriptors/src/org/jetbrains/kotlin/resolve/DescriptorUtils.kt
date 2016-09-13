@@ -265,7 +265,7 @@ fun CallableDescriptor.overriddenTreeUniqueAsSequence(useOriginal: Boolean): Seq
  * }
  */
 
-val IMPLICIT_ARGUMENTS_ONLY_FROM_CONTAINING_CLASSES: String? = System.getProperty("IMPLICIT_ARGUMENTS_ONLY_FROM_CONTAINING_CLASSES")
+val IMPLICIT_ARGUMENTS_ONLY_FROM_CONTAINING_CLASSES: String? = "1"// System.getProperty("IMPLICIT_ARGUMENTS_ONLY_FROM_CONTAINING_CLASSES")
 
 fun ClassDescriptor.computeImplicitOuterClassArguments(): Map<ClassDescriptor, List<TypeProjection>> {
     val result = hashMapOf<ClassDescriptor, List<TypeProjection>>()
