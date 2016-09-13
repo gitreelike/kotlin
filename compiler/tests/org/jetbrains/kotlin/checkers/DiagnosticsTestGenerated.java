@@ -7717,6 +7717,39 @@ public class DiagnosticsTestGenerated extends AbstractDiagnosticsTest {
                     String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/generics/innerClasses/substitutedMemberScope.kt");
                     doTest(fileName);
                 }
+
+                @TestMetadata("compiler/testData/diagnostics/tests/generics/innerClasses/implicitArguments")
+                @TestDataPath("$PROJECT_ROOT")
+                @RunWith(JUnit3RunnerWithInners.class)
+                public static class ImplicitArguments extends AbstractDiagnosticsTest {
+                    public void testAllFilesPresentInImplicitArguments() throws Exception {
+                        KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/diagnostics/tests/generics/innerClasses/implicitArguments"), Pattern.compile("^(.+)\\.kt$"), true);
+                    }
+
+                    @TestMetadata("fromSuperClasses.kt")
+                    public void testFromSuperClasses() throws Exception {
+                        String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/generics/innerClasses/implicitArguments/fromSuperClasses.kt");
+                        doTest(fileName);
+                    }
+
+                    @TestMetadata("fromSuperClassesLocal.kt")
+                    public void testFromSuperClassesLocal() throws Exception {
+                        String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/generics/innerClasses/implicitArguments/fromSuperClassesLocal.kt");
+                        doTest(fileName);
+                    }
+
+                    @TestMetadata("fromSuperClassesLocalInsideInner.kt")
+                    public void testFromSuperClassesLocalInsideInner() throws Exception {
+                        String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/generics/innerClasses/implicitArguments/fromSuperClassesLocalInsideInner.kt");
+                        doTest(fileName);
+                    }
+
+                    @TestMetadata("fromSuperClassesTransitive.kt")
+                    public void testFromSuperClassesTransitive() throws Exception {
+                        String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/generics/innerClasses/implicitArguments/fromSuperClassesTransitive.kt");
+                        doTest(fileName);
+                    }
+                }
             }
 
             @TestMetadata("compiler/testData/diagnostics/tests/generics/multipleBoundsMemberScope")
