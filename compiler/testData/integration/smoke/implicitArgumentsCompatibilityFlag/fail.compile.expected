@@ -1,0 +1,7 @@
+
+ERR:
+hello.kt:10:16: error: 3 type arguments expected for class Inner<Z> defined in Hello.Outer
+    fun foo(): Inner<Char> = null!!
+               ^
+
+Return code: 1
