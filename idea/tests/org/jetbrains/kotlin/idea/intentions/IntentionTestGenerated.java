@@ -5490,6 +5490,45 @@ public class IntentionTestGenerated extends AbstractIntentionTest {
 
     }
 
+    @TestMetadata("idea/testData/intentions/copyConcatenatedStringToClipboard")
+    @TestDataPath("$PROJECT_ROOT")
+    @RunWith(JUnit3RunnerWithInners.class)
+    public static class CopyConcatenatedStringToClipboard extends AbstractIntentionTest {
+        public void testAllFilesPresentInCopyConcatenatedStringToClipboard() throws Exception {
+            KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/intentions/copyConcatenatedStringToClipboard"), Pattern.compile("^([\\w\\-_]+)\\.kt$"), true);
+        }
+
+        @TestMetadata("constants.kt")
+        public void testConstants() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/copyConcatenatedStringToClipboard/constants.kt");
+            doTest(fileName);
+        }
+
+        @TestMetadata("numbers.kt")
+        public void testNumbers() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/copyConcatenatedStringToClipboard/numbers.kt");
+            doTest(fileName);
+        }
+
+        @TestMetadata("simple.kt")
+        public void testSimple() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/copyConcatenatedStringToClipboard/simple.kt");
+            doTest(fileName);
+        }
+
+        @TestMetadata("simpleString.kt")
+        public void testSimpleString() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/copyConcatenatedStringToClipboard/simpleString.kt");
+            doTest(fileName);
+        }
+
+        @TestMetadata("variables.kt")
+        public void testVariables() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/copyConcatenatedStringToClipboard/variables.kt");
+            doTest(fileName);
+        }
+    }
+
     @TestMetadata("idea/testData/intentions/declarations")
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
@@ -10253,87 +10292,6 @@ public class IntentionTestGenerated extends AbstractIntentionTest {
         }
     }
 
-    @TestMetadata("idea/testData/intentions/removeUnnecessaryLateinit")
-    @TestDataPath("$PROJECT_ROOT")
-    @RunWith(JUnit3RunnerWithInners.class)
-    public static class RemoveUnnecessaryLateinit extends AbstractIntentionTest {
-        public void testAllFilesPresentInRemoveUnnecessaryLateinit() throws Exception {
-            KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/intentions/removeUnnecessaryLateinit"), Pattern.compile("^([\\w\\-_]+)\\.kt$"), true);
-        }
-
-        @TestMetadata("lateinitWithConstructor.kt")
-        public void testLateinitWithConstructor() throws Exception {
-            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/removeUnnecessaryLateinit/lateinitWithConstructor.kt");
-            doTest(fileName);
-        }
-
-        @TestMetadata("lateinitWithErroneousDelegation.kt")
-        public void testLateinitWithErroneousDelegation() throws Exception {
-            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/removeUnnecessaryLateinit/lateinitWithErroneousDelegation.kt");
-            doTest(fileName);
-        }
-
-        @TestMetadata("lateinitWithInit.kt")
-        public void testLateinitWithInit() throws Exception {
-            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/removeUnnecessaryLateinit/lateinitWithInit.kt");
-            doTest(fileName);
-        }
-
-        @TestMetadata("lateinitWithMultipleConstructors.kt")
-        public void testLateinitWithMultipleConstructors() throws Exception {
-            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/removeUnnecessaryLateinit/lateinitWithMultipleConstructors.kt");
-            doTest(fileName);
-        }
-
-        @TestMetadata("lateinitWithMultipleConstructorsAndDelegation.kt")
-        public void testLateinitWithMultipleConstructorsAndDelegation() throws Exception {
-            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/removeUnnecessaryLateinit/lateinitWithMultipleConstructorsAndDelegation.kt");
-            doTest(fileName);
-        }
-
-        @TestMetadata("lateinitWithMultipleInit.kt")
-        public void testLateinitWithMultipleInit() throws Exception {
-            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/removeUnnecessaryLateinit/lateinitWithMultipleInit.kt");
-            doTest(fileName);
-        }
-
-        @TestMetadata("lateinitWithPlusAssign.kt")
-        public void testLateinitWithPlusAssign() throws Exception {
-            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/removeUnnecessaryLateinit/lateinitWithPlusAssign.kt");
-            doTest(fileName);
-        }
-
-        @TestMetadata("lateinitWithPrimaryConstructorAndConstructor.kt")
-        public void testLateinitWithPrimaryConstructorAndConstructor() throws Exception {
-            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/removeUnnecessaryLateinit/lateinitWithPrimaryConstructorAndConstructor.kt");
-            doTest(fileName);
-        }
-
-        @TestMetadata("normalLateinit.kt")
-        public void testNormalLateinit() throws Exception {
-            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/removeUnnecessaryLateinit/normalLateinit.kt");
-            doTest(fileName);
-        }
-
-        @TestMetadata("secondaryConstructorDelegateItself.kt")
-        public void testSecondaryConstructorDelegateItself() throws Exception {
-            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/removeUnnecessaryLateinit/secondaryConstructorDelegateItself.kt");
-            doTest(fileName);
-        }
-
-        @TestMetadata("secondaryConstructorDelegateLoop.kt")
-        public void testSecondaryConstructorDelegateLoop() throws Exception {
-            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/removeUnnecessaryLateinit/secondaryConstructorDelegateLoop.kt");
-            doTest(fileName);
-        }
-
-        @TestMetadata("secondaryConstructorDelegateSuper.kt")
-        public void testSecondaryConstructorDelegateSuper() throws Exception {
-            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/removeUnnecessaryLateinit/secondaryConstructorDelegateSuper.kt");
-            doTest(fileName);
-        }
-    }
-
     @TestMetadata("idea/testData/intentions/removeUnnecessaryParentheses")
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
@@ -10564,6 +10522,96 @@ public class IntentionTestGenerated extends AbstractIntentionTest {
         @TestMetadata("notApplicable_parameterExplicitlyNamedIt.kt")
         public void testNotApplicable_parameterExplicitlyNamedIt() throws Exception {
             String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/replaceItWithExplicitFunctionLiteralParam/notApplicable_parameterExplicitlyNamedIt.kt");
+            doTest(fileName);
+        }
+    }
+
+    @TestMetadata("idea/testData/intentions/replaceMathMaxWithCoerceAtLeast")
+    @TestDataPath("$PROJECT_ROOT")
+    @RunWith(JUnit3RunnerWithInners.class)
+    public static class ReplaceMathMaxWithCoerceAtLeast extends AbstractIntentionTest {
+        public void testAllFilesPresentInReplaceMathMaxWithCoerceAtLeast() throws Exception {
+            KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/intentions/replaceMathMaxWithCoerceAtLeast"), Pattern.compile("^([\\w\\-_]+)\\.kt$"), true);
+        }
+
+        @TestMetadata("customMaxMethod.kt")
+        public void testCustomMaxMethod() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/replaceMathMaxWithCoerceAtLeast/customMaxMethod.kt");
+            doTest(fileName);
+        }
+
+        @TestMetadata("doubles.kt")
+        public void testDoubles() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/replaceMathMaxWithCoerceAtLeast/doubles.kt");
+            doTest(fileName);
+        }
+
+        @TestMetadata("moreThan2ValueArg.kt")
+        public void testMoreThan2ValueArg() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/replaceMathMaxWithCoerceAtLeast/moreThan2ValueArg.kt");
+            doTest(fileName);
+        }
+
+        @TestMetadata("noImport.kt")
+        public void testNoImport() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/replaceMathMaxWithCoerceAtLeast/noImport.kt");
+            doTest(fileName);
+        }
+
+        @TestMetadata("oneValueArg.kt")
+        public void testOneValueArg() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/replaceMathMaxWithCoerceAtLeast/oneValueArg.kt");
+            doTest(fileName);
+        }
+
+        @TestMetadata("simple.kt")
+        public void testSimple() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/replaceMathMaxWithCoerceAtLeast/simple.kt");
+            doTest(fileName);
+        }
+    }
+
+    @TestMetadata("idea/testData/intentions/replaceMathMinWithCoerceAtMost")
+    @TestDataPath("$PROJECT_ROOT")
+    @RunWith(JUnit3RunnerWithInners.class)
+    public static class ReplaceMathMinWithCoerceAtMost extends AbstractIntentionTest {
+        public void testAllFilesPresentInReplaceMathMinWithCoerceAtMost() throws Exception {
+            KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/intentions/replaceMathMinWithCoerceAtMost"), Pattern.compile("^([\\w\\-_]+)\\.kt$"), true);
+        }
+
+        @TestMetadata("customMinMethod.kt")
+        public void testCustomMinMethod() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/replaceMathMinWithCoerceAtMost/customMinMethod.kt");
+            doTest(fileName);
+        }
+
+        @TestMetadata("doubles.kt")
+        public void testDoubles() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/replaceMathMinWithCoerceAtMost/doubles.kt");
+            doTest(fileName);
+        }
+
+        @TestMetadata("moreThan2ValueArg.kt")
+        public void testMoreThan2ValueArg() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/replaceMathMinWithCoerceAtMost/moreThan2ValueArg.kt");
+            doTest(fileName);
+        }
+
+        @TestMetadata("noImport.kt")
+        public void testNoImport() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/replaceMathMinWithCoerceAtMost/noImport.kt");
+            doTest(fileName);
+        }
+
+        @TestMetadata("oneValueArg.kt")
+        public void testOneValueArg() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/replaceMathMinWithCoerceAtMost/oneValueArg.kt");
+            doTest(fileName);
+        }
+
+        @TestMetadata("simple.kt")
+        public void testSimple() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/intentions/replaceMathMinWithCoerceAtMost/simple.kt");
             doTest(fileName);
         }
     }

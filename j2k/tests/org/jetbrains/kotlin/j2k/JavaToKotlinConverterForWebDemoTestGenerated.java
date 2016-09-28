@@ -149,6 +149,27 @@ public class JavaToKotlinConverterForWebDemoTestGenerated extends AbstractJavaTo
         }
     }
 
+    @TestMetadata("j2k/testData/fileOrElement/anonymousClass")
+    @TestDataPath("$PROJECT_ROOT")
+    @RunWith(JUnit3RunnerWithInners.class)
+    public static class AnonymousClass extends AbstractJavaToKotlinConverterForWebDemoTest {
+        public void testAllFilesPresentInAnonymousClass() throws Exception {
+            KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("j2k/testData/fileOrElement/anonymousClass"), Pattern.compile("^(.+)\\.java$"), true);
+        }
+
+        @TestMetadata("kt-13146.java")
+        public void testKt_13146() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("j2k/testData/fileOrElement/anonymousClass/kt-13146.java");
+            doTest(fileName);
+        }
+
+        @TestMetadata("localSelfReference.java")
+        public void testLocalSelfReference() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("j2k/testData/fileOrElement/anonymousClass/localSelfReference.java");
+            doTest(fileName);
+        }
+    }
+
     @TestMetadata("j2k/testData/fileOrElement/arrayAccessExpression")
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
@@ -2446,6 +2467,12 @@ public class JavaToKotlinConverterForWebDemoTestGenerated extends AbstractJavaTo
         @TestMetadata("methodWithReturnStatement.java")
         public void testMethodWithReturnStatement() throws Exception {
             String fileName = KotlinTestUtils.navigationMetadata("j2k/testData/fileOrElement/function/methodWithReturnStatement.java");
+            doTest(fileName);
+        }
+
+        @TestMetadata("nativeMethods.java")
+        public void testNativeMethods() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("j2k/testData/fileOrElement/function/nativeMethods.java");
             doTest(fileName);
         }
 

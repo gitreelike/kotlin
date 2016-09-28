@@ -3213,6 +3213,12 @@ public class DiagnosticsTestGenerated extends AbstractDiagnosticsTest {
                 doTest(fileName);
             }
 
+            @TestMetadata("multipleAreNull.kt")
+            public void testMultipleAreNull() throws Exception {
+                String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/constructorConsistency/multipleAreNull.kt");
+                doTest(fileName);
+            }
+
             @TestMetadata("nobacking.kt")
             public void testNobacking() throws Exception {
                 String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/constructorConsistency/nobacking.kt");
@@ -3872,6 +3878,87 @@ public class DiagnosticsTestGenerated extends AbstractDiagnosticsTest {
                 @TestMetadata("simpleClass.kt")
                 public void testSimpleClass() throws Exception {
                     String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/controlFlowAnalysis/definiteReturn/simpleClass.kt");
+                    doTest(fileName);
+                }
+            }
+
+            @TestMetadata("compiler/testData/diagnostics/tests/controlFlowAnalysis/unnecessaryLateinit")
+            @TestDataPath("$PROJECT_ROOT")
+            @RunWith(JUnit3RunnerWithInners.class)
+            public static class UnnecessaryLateinit extends AbstractDiagnosticsTest {
+                public void testAllFilesPresentInUnnecessaryLateinit() throws Exception {
+                    KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/diagnostics/tests/controlFlowAnalysis/unnecessaryLateinit"), Pattern.compile("^(.+)\\.kt$"), true);
+                }
+
+                @TestMetadata("lateinitRecursiveInLambda.kt")
+                public void testLateinitRecursiveInLambda() throws Exception {
+                    String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/controlFlowAnalysis/unnecessaryLateinit/lateinitRecursiveInLambda.kt");
+                    doTest(fileName);
+                }
+
+                @TestMetadata("lateinitWithConstructor.kt")
+                public void testLateinitWithConstructor() throws Exception {
+                    String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/controlFlowAnalysis/unnecessaryLateinit/lateinitWithConstructor.kt");
+                    doTest(fileName);
+                }
+
+                @TestMetadata("lateinitWithErroneousDelegation.kt")
+                public void testLateinitWithErroneousDelegation() throws Exception {
+                    String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/controlFlowAnalysis/unnecessaryLateinit/lateinitWithErroneousDelegation.kt");
+                    doTest(fileName);
+                }
+
+                @TestMetadata("lateinitWithInit.kt")
+                public void testLateinitWithInit() throws Exception {
+                    String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/controlFlowAnalysis/unnecessaryLateinit/lateinitWithInit.kt");
+                    doTest(fileName);
+                }
+
+                @TestMetadata("lateinitWithMultipleConstructors.kt")
+                public void testLateinitWithMultipleConstructors() throws Exception {
+                    String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/controlFlowAnalysis/unnecessaryLateinit/lateinitWithMultipleConstructors.kt");
+                    doTest(fileName);
+                }
+
+                @TestMetadata("lateinitWithMultipleConstructorsAndDelegation.kt")
+                public void testLateinitWithMultipleConstructorsAndDelegation() throws Exception {
+                    String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/controlFlowAnalysis/unnecessaryLateinit/lateinitWithMultipleConstructorsAndDelegation.kt");
+                    doTest(fileName);
+                }
+
+                @TestMetadata("lateinitWithPlusAssign.kt")
+                public void testLateinitWithPlusAssign() throws Exception {
+                    String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/controlFlowAnalysis/unnecessaryLateinit/lateinitWithPlusAssign.kt");
+                    doTest(fileName);
+                }
+
+                @TestMetadata("lateinitWithPrimaryConstructorAndConstructor.kt")
+                public void testLateinitWithPrimaryConstructorAndConstructor() throws Exception {
+                    String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/controlFlowAnalysis/unnecessaryLateinit/lateinitWithPrimaryConstructorAndConstructor.kt");
+                    doTest(fileName);
+                }
+
+                @TestMetadata("normalLateinit.kt")
+                public void testNormalLateinit() throws Exception {
+                    String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/controlFlowAnalysis/unnecessaryLateinit/normalLateinit.kt");
+                    doTest(fileName);
+                }
+
+                @TestMetadata("normalLateinitWithTwoConstructors.kt")
+                public void testNormalLateinitWithTwoConstructors() throws Exception {
+                    String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/controlFlowAnalysis/unnecessaryLateinit/normalLateinitWithTwoConstructors.kt");
+                    doTest(fileName);
+                }
+
+                @TestMetadata("secondaryConstructorDelegateItself.kt")
+                public void testSecondaryConstructorDelegateItself() throws Exception {
+                    String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/controlFlowAnalysis/unnecessaryLateinit/secondaryConstructorDelegateItself.kt");
+                    doTest(fileName);
+                }
+
+                @TestMetadata("secondaryConstructorDelegateLoop.kt")
+                public void testSecondaryConstructorDelegateLoop() throws Exception {
+                    String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/controlFlowAnalysis/unnecessaryLateinit/secondaryConstructorDelegateLoop.kt");
                     doTest(fileName);
                 }
             }
@@ -9389,6 +9476,12 @@ public class DiagnosticsTestGenerated extends AbstractDiagnosticsTest {
                     doTest(fileName);
                 }
 
+                @TestMetadata("noCaptureTypeErrorForNonTopLevel.kt")
+                public void testNoCaptureTypeErrorForNonTopLevel() throws Exception {
+                    String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/inference/capturedTypes/noCaptureTypeErrorForNonTopLevel.kt");
+                    doTest(fileName);
+                }
+
                 @TestMetadata("notApproximateWhenCopyDescriptors.kt")
                 public void testNotApproximateWhenCopyDescriptors() throws Exception {
                     String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/inference/capturedTypes/notApproximateWhenCopyDescriptors.kt");
@@ -14814,6 +14907,12 @@ public class DiagnosticsTestGenerated extends AbstractDiagnosticsTest {
                 doTest(fileName);
             }
 
+            @TestMetadata("kt13954.kt")
+            public void testKt13954() throws Exception {
+                String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/regressions/kt13954.kt");
+                doTest(fileName);
+            }
+
             @TestMetadata("kt1489_1728.kt")
             public void testKt1489_1728() throws Exception {
                 String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/regressions/kt1489_1728.kt");
@@ -15411,6 +15510,12 @@ public class DiagnosticsTestGenerated extends AbstractDiagnosticsTest {
             @TestMetadata("ambiguityWithTwoCorrespondingFunctionTypes.kt")
             public void testAmbiguityWithTwoCorrespondingFunctionTypes() throws Exception {
                 String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/resolve/ambiguityWithTwoCorrespondingFunctionTypes.kt");
+                doTest(fileName);
+            }
+
+            @TestMetadata("capturedTypesInLambdaParameter.kt")
+            public void testCapturedTypesInLambdaParameter() throws Exception {
+                String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/diagnostics/tests/resolve/capturedTypesInLambdaParameter.kt");
                 doTest(fileName);
             }
 

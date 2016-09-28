@@ -24,6 +24,7 @@ import org.jetbrains.kotlin.resolve.jvm.JvmOverloadFilter
 import org.jetbrains.kotlin.resolve.jvm.JvmTypeSpecificityComparator
 import org.jetbrains.kotlin.resolve.jvm.RuntimeAssertionsTypeChecker
 import org.jetbrains.kotlin.resolve.jvm.checkers.*
+import org.jetbrains.kotlin.synthetic.JavaSyntheticConstructorsProvider
 import org.jetbrains.kotlin.synthetic.JavaSyntheticScopes
 import org.jetbrains.kotlin.types.DynamicTypesSettings
 
@@ -53,8 +54,7 @@ object JvmPlatformConfigurator : PlatformConfigurator(
                 UnsupportedSyntheticCallableReferenceChecker(),
                 SuperCallWithDefaultArgumentsChecker(),
                 MissingDependencyClassChecker(),
-                ProtectedSyntheticExtensionCallChecker,
-                AdditionalBuiltInsMembersCallChecker
+                ProtectedSyntheticExtensionCallChecker
         ),
 
         additionalTypeCheckers = listOf(
@@ -76,11 +76,10 @@ object JvmPlatformConfigurator : PlatformConfigurator(
         overloadFilter = JvmOverloadFilter
 ) {
 
-    override fun configure(container: StorageComponentContainer) {
-        super.configure(container)
-
+    override fun configureModuleComponents(container: StorageComponentContainer) {
         container.useImpl<ReflectionAPICallChecker>()
         container.useImpl<JavaSyntheticScopes>()
+        container.useInstance(JavaSyntheticConstructorsProvider)
         container.useInstance(JvmTypeSpecificityComparator)
     }
 }
